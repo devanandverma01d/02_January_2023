@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrow Function</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /*HERE WE CAN WRITE CSS CODE*/
+    </style>
+    <script src="./js/script.js"></script>
+    <script>
+        /* we can write js code before closing of head tag*/
+    </script>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        /*we can write js code before closing of head tag*/
+        //let's define function in old way
+
+        //1. Function Definition
+
+        /*syntax- to define a function
+        function <functionName>(){
+            //function body
+        }*/
+        function myFunction() {
+            alert("Hello from old way of defining a function");
+        }
+        //2.  function calling/invocation/execution
+        myFunction()
+        //let's define function in new way (ES6- 2015)
+        /*
+        syntax-
+            let functionName = ()=>{
+                //function body
+            }
+        */
+        let myFunction2 = (x) => {
+            alert(`Hello ${x} from new way of defining a function`);
+        }
+        myFunction2("Devanand Verma");  // this is actual argument
+
+    </script>
+
+    <script>
+
+        // let's define a function/method inside an object
+        /*
+        Syntax-
+                let objectname = {
+                    //1.Property:value
+                    //2.Method
+                }
+        */
+        let student1 = { //this is an object
+            //1. P:V
+            name: "Devanand",
+            surname: "Verma",
+            //2. Methods
+            displayFullName() {// camelCase
+                console.log(`Hello, ${this.name + " " + this.surname} How are you`)
+            },
+            display(name) {
+                alert(`Hello, ${name} Good morning!`);
+            },
+            display2(name = 'Dhananjay') {
+                alert(`Hello, ${name} Good morning!`);
+            },
+            display3: (name) => {
+                alert(`Hello, ${name} Good morning!`);
+            }
+
+        }
+        //object.method
+        student1.displayFullName();
+        student1.display('Dhruva');
+        student1.display2();
+        student1.display3("Satyam");
+
+    </script>
+
+    <script>
+        // let's define a method inside a class.
+        /*
+        syntax-
+                class ClassName{  /// PascalCase
+                    //1.property
+                    //2.constructor
+                    //3.method
+                }
+        */
+
+        class MyClass {
+            //1.property
+            student2name = "Rahul"
+            student2surname;
+            //2. Constructor
+            constructor(sname) {
+                this.student2surname = sname
+            }
+            //3.Method
+            myFunction3() {
+                alert(`Hello, ${this.student2name} ${this.student2surname} How are you`)
+            }
+            myFunction4 = () => {// Fat arrow notation
+                alert(`Hello, ${this.student2name} ${this.student2surname} How are you`)
+            }
+        }
+        let obj = new MyClass("sharma");
+        obj.myFunction3();
+        obj.myFunction4();
+    </script>
+</body>
+
+</html>
